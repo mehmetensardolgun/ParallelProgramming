@@ -2,7 +2,7 @@ import sys
 
 custom_power = lambda x=0, /, e=1: x ** e
 
-def custom_equation(x: float = 0, y: float = 0, /, a: float = 1, b: float = 1, *, c: float = 1) -> float:
+def custom_equation(x: int = 0, y: int = 0, /, a: int = 1, b: int = 1, *, c: int = 1) -> float:
     """
     Computes a custom equation.
 
@@ -13,9 +13,9 @@ def custom_equation(x: float = 0, y: float = 0, /, a: float = 1, b: float = 1, *
     :param c: keyword-only, default 1
     :return: result of (x**a + y**b) / c
     """
-    return (x ** a + y ** b) / c
+    return float((x ** a + y ** b) / c)
 
-def fn_w_counter():
+def fn_w_counter() -> (int, dict[str, int]):
     if not hasattr(fn_w_counter, "count"):
         fn_w_counter.count = 0
         fn_w_counter.callers = {}
