@@ -1,29 +1,22 @@
 def remove_duplicates(seq: list) -> list:
     result = []
-
-    for item in seq:
-        if item not in result:
-            result.append(item)
-
+    for element in seq:
+        if element not in result:
+            result += [element]
     return result
 
 
 def list_counts(seq: list) -> dict:
     counts = {}
-
-    for item in seq:
-        if item in counts:
-            counts[item] += 1
-        else:
-            counts[item] = 1
-
+    for element in seq:
+        if element not in counts:
+            counts[element] = 0
+        counts[element] += 1
     return counts
 
 
 def reverse_dict(d: dict) -> dict:
-    reversed_d = {}
-
-    for key, value in d.items():
-        reversed_d[value] = key
-
-    return reversed_d
+    new_dict = {}
+    for key in d:
+        new_dict[d[key]] = key
+    return new_dict
